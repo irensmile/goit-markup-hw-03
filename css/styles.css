@@ -1,6 +1,39 @@
 :root {
     --body_bgr: #FFFFFF;
-    --main-color: #0000FF
+    --main-color: #0000FF;
+    --cloud: #F4F4FD
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset */
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    display: block;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
 body{
@@ -17,7 +50,7 @@ body{
     text-align: center;
     color: #2e2f42;
     line-height: 1.11;
-    text-transform: capitalize;    
+    text-transform: capitalize;  
 }
 .small_header{
     letter-spacing: 0.02em;
@@ -58,9 +91,22 @@ body{
 }
 
 .address{
-    font-style: normal 
+    font-style: normal;
 }
-.btn{
+
+.address-container{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.btn-hero{
     cursor: pointer;
     /* IRIS */
     background: #4D5AE5;
@@ -70,6 +116,13 @@ body{
     line-height: 24px;
     letter-spacing: 0.04em;
     color: #FFFFFF;
+    padding: 16px 32px;
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    margin: 0 auto 0 auto;
 }
 .btn:focus{
     background: #404BBF;
@@ -90,7 +143,8 @@ body{
 }
 
 .logo-second{
-    color: #2E2F42;  
+    color: #2E2F42; 
+    padding-right: 76px; 
 }
 
 .link{
@@ -101,17 +155,27 @@ body{
     list-style: none
 }
 
-.slogan-section{
+.hero-section{
     background: #2E2F42;
+    padding-top: 188px;
+    padding-bottom: 188px;
 }
 
-.slogan{
+.hero{
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
     text-align: center;
     letter-spacing: 0.02em;
-    color: #FFFFFF;       
+    color: #FFFFFF; 
+    width: 496px;      
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
 }
 
 .description{
@@ -126,9 +190,13 @@ body{
     line-height: 24px;
     letter-spacing: 0.02em;
     color: #F4F4FD;
+    width: 264px;
+    margin-top: 16px;
 }
 .footer{
     background: #2E2F42;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 .logo-third{
     color: #f4f4fd;
@@ -142,6 +210,9 @@ body{
     line-height: 1.5;
     letter-spacing: 0.04em;
     background: #F4F4FD;
+    padding: 12px 24px;
+    border: 1px solid #e7e9fc;
+    border-radius: 4px;
 }
 .btn-portfolio:focus{
     color: #FFFFFF;
@@ -153,7 +224,104 @@ body{
 }
 .team-section{
     background-color: #F4F4FD;
+    background: var(--cloud);
+    padding-bottom: 120px;
 }
 .team-item{
-    background-color: #FFFFFF
+    background-color: #FFFFFF;
+    border-radius: 0px 0px 4px 4px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.card{
+    display: flex;
+    width: 232px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 32px 0;    
+}
+
+.container {
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+   width: 1158px; /*+30px*/ 
+}
+
+.header{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e7e9fc;
+}
+
+.header-container{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.header-nav{
+    display:flex;
+    align-items: center;
+}
+.header-list{
+    display:flex;
+    align-items: center;
+    gap: 40px;
+}
+.strategy-container{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+.doing-container {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 72px;
+}
+.strategy-element{
+    display: flex;
+    width: 264px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+.team-container{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 72px; 
+       
+}
+footer-container {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.portfolio-filters {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+    padding: 72px 0;
+}
+
+.portfolio{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 24px;
+    padding-bottom: 120px;
+}
+.portfolio-card{
+    border: 1px solid #e7e9fc;
+    border-top: none;
+    padding: 32px 16px;
 }
